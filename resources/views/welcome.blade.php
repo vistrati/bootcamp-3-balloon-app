@@ -21,20 +21,6 @@
         </style>
     </head>
     <body class="antialiased">
-    @auth()
-    <h1>Hello {!! "<strong>John</strong> <i>Doe</i>" !!}</h1>
-    @endauth
-    @guest
-    <h1>Hello stranger</h1>
-    @endguest
-
-    @if(auth()->id())
-        <h1>Hello {!! "<strong>John</strong> <i>Doe</i>" !!}</h1>
-    @else
-        <h1>Hello stranger</h1>
-    @endif
-
-
         <div class="relative flex items-top justify-center min-h-screen bg-gray-100 dark:bg-gray-900 sm:items-center py-4 sm:pt-0">
             @if (Route::has('login'))
                 <div class="hidden fixed top-0 right-0 px-6 py-4 sm:block">
