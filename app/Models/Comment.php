@@ -12,4 +12,9 @@ class Comment extends Model
         'author_email',
         'message',
     ];
+
+    public function article()
+    {
+        return $this->belongsTo(Article::class);
+    }
 }

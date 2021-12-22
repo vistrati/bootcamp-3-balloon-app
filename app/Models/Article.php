@@ -20,6 +20,10 @@ class Article extends Model
         'seo_description',
     ];
 
+    public function getImageUrlAttribute() {
+        return \Illuminate\Support\Facades\Storage::url($this->image);
+    }
+
     public function category()
     {
         return $this->belongsTo(BlogCategory::class, 'category_id');
@@ -28,5 +32,15 @@ class Article extends Model
     public function tags()
     {
         return $this->belongsToMany(BlogTag::class);
+    }
+
+    public function author()
+    {
+        return $this->belongsTo(User::class, 'author_id');
+    }
+
+    public function comments()
+    {
+        return $this->hasMany(Comment::class);
     }
 }

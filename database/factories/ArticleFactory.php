@@ -22,7 +22,7 @@ class ArticleFactory extends Factory
             'author_id' => User::factory(),
             'published_at' => $this->faker->dateTime(),
             'excerpt' => $this->faker->sentence(),
-            'image' => $this->faker->image('storage/app/public'),
+            'image' => $this->faker->image('storage/app/public', $width = 640, $height = 480, $category = null, $fullPath = false),
             'seo_title' => $this->faker->sentence(),
             'seo_description' => $this->faker->sentence(),
         ];
