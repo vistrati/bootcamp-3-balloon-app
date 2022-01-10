@@ -22,7 +22,7 @@
                     {{ session('success') }}
                 </div>
             @endif
-            <form action="{{ route('contactUs') }}" method="POST" name="contact-form">
+            <form action="{{ route('contactUs.send') }}" method="POST" name="contact-form">
                 <div class="form-row">
                     <div class="form-group col-md-6">
                         <label for="email">Email</label>
