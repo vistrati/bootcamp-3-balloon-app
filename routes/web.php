@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\ArticleController;
 use App\Http\Controllers\BlogController;
+use App\Http\Controllers\ContactUsController;
 use App\Http\Controllers\HomeController;
 use Illuminate\Support\Facades\Route;
 
@@ -20,3 +21,4 @@ Route::get('/',  [HomeController::class, 'index']);
 Route::get('/blog',  [BlogController::class, 'index'])->name('blog');
 Route::get('/blog/article/{id}',  [ArticleController::class, 'show'])
     ->name('blogArticle');
+Route::get('contacts', [ContactUsController::class, 'view'])->name('contactUs');
