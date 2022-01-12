@@ -66,10 +66,11 @@ services:
     image: mailhog/mailhog
     container_name: project-mailhog
     ports:
-      - "8025:8025"
+      - "8825:8025"
       - "8125:1025"
     networks:
       - project-network
+    restart: unless-stopped
 
   project-redis:
     image: redis:3.0
