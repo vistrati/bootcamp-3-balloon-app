@@ -9,3 +9,4 @@
 <p>message:</p>
 <p>{{ $messageText }}</p>
 </body>
+</html>
