@@ -22,4 +22,5 @@ Route::get('/blog',  [BlogController::class, 'index'])->name('blog');
 Route::get('/blog/article/{id}',  [ArticleController::class, 'show'])
     ->name('blogArticle');
 Route::get('contacts', [ContactUsController::class, 'view'])->name('contactUs');
-Route::post('contactUs', [ContactUsController::class, 'send'])->name('contactUs.send');
+Route::post('contactUs', [ContactUsController::class, 'send'])->name('contactUs.send')
+    ->middleware('log.activity:sendContactUs');
