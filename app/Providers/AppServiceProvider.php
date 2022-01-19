@@ -2,7 +2,8 @@
 
 namespace App\Providers;
 
-use App\DummyClass;
+use App\Services\DummyRequestActivityLogger;
+use App\Services\RequestActivityLoggerInterface;
 use Illuminate\Pagination\Paginator;
 use Illuminate\Support\ServiceProvider;
 
@@ -15,8 +16,8 @@ class AppServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        $this->app->singleton(DummyClass::class, function ($app) {
-            return new DummyClass(5);
+        $this->app->bind(RequestActivityLoggerInterface::class, function () {
+            return $this->app->make(DummyRequestActivityLogger::class);
         });
     }
 
